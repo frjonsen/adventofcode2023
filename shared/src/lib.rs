@@ -1,14 +1,11 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+pub fn read_input(day: u8) -> Vec<String> {
+    let pwd = std::env::current_dir().expect("Failed to get current directory");
+    let full_path = pwd.join("inputs").join(format!("day{day}.txt"));
+    let contents = std::fs::read_to_string(full_path)
+        .unwrap_or_else(|_| panic!("Failed to read input for day {day}"));
+    contents
+        .split_whitespace()
+        .map(str::trim)
+        .map(str::to_owned)
+        .collect()
 }
