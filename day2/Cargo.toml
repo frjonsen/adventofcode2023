@@ -12,3 +12,5 @@ name = "part2"
 path = "src/part2.rs"
 
 [dependencies]
+shared = { path = "../shared" }
+regex = { workspace = true }

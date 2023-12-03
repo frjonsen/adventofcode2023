@@ -1,5 +1,5 @@
 [package]
-name = "day1"
+name = "day3"
 version = "0.1.0"
 edition = "2021"
 
@@ -12,4 +12,3 @@ name = "part2"
 path = "src/part2.rs"
 
 [dependencies]
-shared = { path = "../shared" }

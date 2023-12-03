@@ -4,7 +4,8 @@ pub fn read_input(day: u8) -> Vec<String> {
     let contents = std::fs::read_to_string(full_path)
         .unwrap_or_else(|_| panic!("Failed to read input for day {day}"));
     contents
-        .split_whitespace()
+        .trim()
+        .lines()
         .map(str::trim)
         .map(str::to_owned)
         .collect()
